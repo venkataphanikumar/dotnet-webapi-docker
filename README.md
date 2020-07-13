@@ -6,8 +6,7 @@
 
 ## Run in Docker
 
-Build image:
+- Build the image:
 `docker build -t smholvoet/dotnet-webapi .`
-
-Run container:
+- Start a new container:
 `docker run -p 9000:80 smholvoet/dotnet-webapi`
