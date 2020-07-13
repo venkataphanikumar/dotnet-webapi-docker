@@ -7,7 +7,7 @@
 ## Run in Docker
 
 Build image:
-`docker build -t picanolgroup/dotnet-webapi .`
+`docker build -t smholvoet/dotnet-webapi .`
 
 Run container:
-`docker run -p 9000:80 picanolgroup/dotnet-webapi`
+`docker run -p 9000:80 smholvoet/dotnet-webapi`
