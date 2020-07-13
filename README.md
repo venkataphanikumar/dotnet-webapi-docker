@@ -1,8 +1,8 @@
 # Running a .NET Core Web API inside Docker
 
 ## Run locally
-
-`dotnet run .`
+- Navigate to the `src` directory
+- `dotnet run .`
 
 ## Run in Docker
 

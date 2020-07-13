@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
-COPY *.csproj ./
+COPY src/*.csproj ./
 RUN dotnet restore
 
 # copy everything else and build app
-COPY . ./
+COPY /src ./
 RUN dotnet publish -c release -o /app --no-restore
 
 # final stage/image
