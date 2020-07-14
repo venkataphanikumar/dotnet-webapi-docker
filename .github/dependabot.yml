@@ -2,10 +2,10 @@ version: 2
 updates:
 
   # NuGet
-  - package-ecosystem: "dotnet:nuget" 
+  - package-ecosystem: "nuget" 
     directory: "/src/" 
     schedule:
-      interval: "live"
+      interval: "daily"
 
   # Docker
   - package-ecosystem: "docker" 
