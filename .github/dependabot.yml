@@ -1,0 +1,14 @@
+version: 2
+updates:
+
+  # NuGet
+  - package-ecosystem: "dotnet:nuget" 
+    directory: "/src/" 
+    schedule:
+      interval: "live"
+
+  # Docker
+  - package-ecosystem: "docker" 
+    directory: "/" 
+    schedule:
+      interval: "daily"
