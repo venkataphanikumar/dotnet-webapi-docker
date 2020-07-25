@@ -12,16 +12,16 @@ jobs:
 
     - uses: azure/docker-login@v1
       with:
-        login-server: ${{ env.CONTAINER_REGISTRY }}
+        login-server: ${{ secrets.CONTAINER_REGISTRY }}
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t ${{ env.CONTAINER_REGISTRY }}/smholvoet-docker-webapp:${{ github.sha }}
-        docker push ${{ env.CONTAINER_REGISTRY }}/smholvoet-docker-webapp:${{ github.sha }} 
+        docker build . -t ${{ secrets.CONTAINER_REGISTRY }}/smholvoet-docker-webapp:${{ github.sha }}
+        docker push ${{ secrets.CONTAINER_REGISTRY }}/smholvoet-docker-webapp:${{ github.sha }} 
 
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'smholvoet-docker-webapp'
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        images: ${{ env.CONTAINER_REGISTRY }}/smholvoet-docker-webapp:${{ github.sha }}
+        images: ${{ secrets.CONTAINER_REGISTRY }}/smholvoet-docker-webapp:${{ github.sha }}
