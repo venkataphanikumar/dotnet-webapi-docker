@@ -1,5 +1,5 @@
-on: [push]
-
+on: workflow_dispatch
+    
 name: Linux_Container_Node_Workflow
 
 jobs:
