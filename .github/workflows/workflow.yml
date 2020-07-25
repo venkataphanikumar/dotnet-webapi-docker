@@ -22,14 +22,14 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t smholvoet.azurecr.io/nodejssampleapp:${{ github.sha }}
-        docker push smholvoet.azurecr.io/nodejssampleapp:${{ github.sha }} 
+        docker build . -t smholvoet.azurecr.io/smholvoet-docker-webapp:${{ github.sha }}
+        docker push smholvoet.azurecr.io/smholvoet-docker-webapp:${{ github.sha }} 
 
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'smholvoet-docker-webapp'
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        images: 'contoso.azurecr.io/dotnet-webapi-docker:${{ github.sha }}'
+        images: 'contoso.azurecr.io/smholvoet-docker-webapp:${{ github.sha }}'
 
     - name: Azure logout
       run: |
